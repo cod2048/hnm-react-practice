@@ -1,4 +1,8 @@
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import ProductAll from './page/ProductAll';
+import Login from './page/Login';
+import ProductDetail from './page/ProductDetail';
 
 // 1. 전체상품페이지, 로그인, 상품상세페이지
 // 2. 전체 상품페이지에서는 전체 상품을 볼 수 있다.
@@ -12,8 +16,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      hi
+    <div>
+      <Routes>
+      <Route path="/" element={<ProductAll/>}></Route>
+      <Route path="/login" element={<Login/>}></Route>
+      <Route path="/product/:id" element={<ProductDetail/>}></Route>
+      </Routes>
     </div>
   );
 }
